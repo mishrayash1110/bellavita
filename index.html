@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella Vita Perfumes</title>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            color: #fff;
+            background-color: #111;
+            background-image: url('file:///C:/Users/Anil%20Mishra/Pictures/pexels-introspectivedsgn-16639522.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+        }
+
+        body.light-theme {
+            background-color: #ffffff;
+            color: #white;
+            background-image: url('file:///C:/Users/Anil%20Mishra/Pictures/pexels-introspectivedsgn-16639522.jpg');
+        }
+        body.dark-theme {
+            background-color: #222;
+            color: #333;
+            background-image: url('file:///C:/Users/Anil%20Mishra/Pictures/wp3478449.jpg');
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+        .menu-item {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            padding: 60px 20px;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            border: 4px solid rgba(255, 255, 255, 0.8); /* Updated to 80% opacity */
+            border-radius: 15px;
+            margin: 20px;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .button {
+            padding: 12px 24px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ddd;
+        }
+        img {
+            width: 400px;
+            height: 360px;
+        }
+        .theme-toggle {
+            padding: 5px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 80%;
+            background-color: #333;
+            color: #white;
+            cursor: not-allowed;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-toggle:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+        body.dark-theme .theme-toggle {
+            background-color: #white;
+            color: #333;
+        }
+        body.dark-theme .theme-toggle:hover {
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="light-theme"> <!-- Default to light theme -->
+    <div class="container">
+        <div class="logo">BELLAVITA</div>
+        <div class="menu">
+            <div class="menu-item">Home</div>
+            <div class="menu-item">About</div>
+            <div class="menu-item">Products</div>
+            <div class="menu-item">Contact</div>
+            <button id="theme-toggle" class="theme-toggle">
+                <span class="icon">☀️</span>
+            </button>
+        </div>
+    </div>
+
+       <div class="content">
+        <div class="text">
+            <h1>Enhance</h1>
+            <h1>Your Scent Collection</h1>
+            <p>Discover the perfect fragrance for you with our wide collection of perfumes.</p>
+            <button class="button">Shop Now</button>
+        </div>
+        <img src="file:///C:/Users/Anil%20Mishra/Downloads/1_52eab4af-ff03-4003-9d93-0375e928d242-Photoroom.png">
+    </div>
+
+  
+    <div class="section">
+        <h2>About Us</h2>
+        <p>Bella Vita Perfumes is dedicated to crafting unique, high-quality fragrances that bring elegance and character to every moment. Our collection is a blend of tradition and innovation, created with passion to help you express your true essence.</p>
+    </div>
+
+        <div class="section">
+        <h2>Our Collection</h2>
+        <p>From refreshing florals to exotic spices, explore our diverse range of scents tailored for every mood and occasion. Our perfumes are crafted with the finest ingredients to ensure a long-lasting impression.</p>
+    </div>
+
+    
+    <div class="section">
+        <h2>Contact Us</h2>
+        <p>For any inquiries or assistance, feel free to reach out to us. We are here to help you find the perfect scent!</p>
+        <p>Email: yashanilmishra@gmail.com</p>
+        <p>Phone: 8591256812/8369823989</p>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Ensure the light-theme is applied initially
+        body.classList.add('light-theme');
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-theme')) {
+                body.classList.replace('light-theme', 'dark-theme');
+                themeToggle.querySelector('.icon').textContent = '  ☀️  '; // Moon icon for dark mode
+            } else {
+                body.classList.replace('dark-theme', 'light-theme');
+                themeToggle.querySelector('.icon').textContent = '  🌚  '; // Sun icon for light mode
+            }
+        });
+    </script>
+</body>
+</html>
